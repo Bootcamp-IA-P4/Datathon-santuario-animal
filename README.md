@@ -7,7 +7,7 @@ Aquí pon una descripcion atractiva de tu resultado
 * GUÍA DE ANALISIS EXPLORATORIO: [TUTORIAL CIENCIA DE DATOS](https://www.youtube.com/watch?v=-nCIBbdDQOg)
 *  Cómo elegir el gráfico correcto: [visualizar datos abiertos](https://datos.gob.es/es/blog/como-elegir-el-grafico-correcto-para-visualizar-datos-abiertos)
 
-## Primero pasos para realizar un EDA
+## Primeros pasos para realizar un EDA
 ![EDA](https://i0.wp.com/gravitar.biz/wp-content/uploads/2024/02/8-1.png?resize=752%2C387&ssl=1)
 
 Como puedes observar este proyecto trata sobre el análisis exploratorio de los datos, es el corazón de la ciencia de datos y machine learnig, todo esto lo realizaremos gracias a tres bibliotecas de python que son un éstandar para este análisis y visualización de datos.
@@ -71,4 +71,11 @@ print("="*100)
 > incluyendo mínimo, máximo, media, mediana, primer y tercer cuartil, y el número de valores
 > faltantes.
 
+### Manejo de Valores Faltantes y Duplicados
+
+
 ### Visualización de Datos Básica
+La visualización de datos es esencial en el análisis exploratorio, ya que no solo complementa los análisis numéricos, sino que también permite identificar patrones, tendencias, relaciones entre variables y anomalías que podrían pasar desapercibidas. Para ello, se utilizan diversas herramientas gráficas—como histogramas, gráficos de líneas, diagramas de barras y gráficos de sectores—adaptadas a distintos tipos de análisis. En particular, el histograma es muy útil para representar la distribución de variables numéricas al agrupar los datos en intervalos, lo que facilita detectar características estadísticas fundamentales como la tendencia central, la variabilidad, la presencia de valores extremos, discontinuidades y posibles valores atípicos.
+
+En este caso vamos a usar:
+
