@@ -4,6 +4,8 @@ Aquí pon una descripcion atractiva de tu resultado
 ## Recursos:
 * Guía práctica de introducción al análisis exploratorio de datos en Python: [guia_eda_python](https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf)
 * (EDA) en Python para Principiantes: Paso a Paso. [Guía de Análisis Exploratorio de Datos](https://dataxpertos.com/guia-analisis-exploratorio-python-eda/)
+* GUÍA DE ANALISIS EXPLORATORIO: [TUTORIAL CIENCIA DE DATOS](https://www.youtube.com/watch?v=-nCIBbdDQOg)
+*  Cómo elegir el gráfico correcto: [visualizar datos abiertos](https://datos.gob.es/es/blog/como-elegir-el-grafico-correcto-para-visualizar-datos-abiertos)
 
 ## Primero pasos para realizar un EDA
 ![EDA](https://i0.wp.com/gravitar.biz/wp-content/uploads/2024/02/8-1.png?resize=752%2C387&ssl=1)
@@ -31,8 +33,42 @@ las otras.
 Para ello primero importaremos las bibliotecas antes mencionadas con sus correspondientes alias:
 
 ```python
+# Cargar las librerías necesarias
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 Después vamos a cargar los datos de un dataframe yo usare este [animal-condition-analysis](https://www.kaggle.com/code/francisoharaaidoo/hth-2023-animal-condition-analysis)
+
+> [!NOTE]
+> Como herramienta para este caso práctico, se ha utilizado el lenguaje de programación Python y el entorno
+de desarrollo Jupyter Notebook en Google Colab
+
+### Exploración Inicial de los Datos
+
+```python
+# Cargar los datos en un DataFrame
+df = pd.read_csv('animal_condition.csv')
+print(df.head()) # Mostrar las primeras filas del DataFrame
+print("="*100) #esto es un separador visual
+
+# Mostrar la estructura del DataFrame
+print(df.info()) # Obtener información sobre los tipos de datos y la cantidad de valores no nulos
+print("="*100)
+
+# Mostrar un resumen estadístico de las variables numéricas
+print(df.describe(include= 'all')) # Estadísticas descriptivas de las variables numéricas
+print("="*100)
+```
+
+> [!IMPORTANT]
+> df.head(): muestra las primeras filas del DataFrame.
+> 
+>  df.info(): proporciona una vista compacta de la estructura interna del DataFrame, indicando los
+> tipos de variables, el número de valores no nulos y la memoria utilizada.
+> 
+> df.describe(): muestra un resumen estadístico de las variables numéricas del DataFrame,
+> incluyendo mínimo, máximo, media, mediana, primer y tercer cuartil, y el número de valores
+> faltantes.
+
+### Visualización de Datos Básica
