@@ -71,7 +71,7 @@ print("="*100)
 > incluyendo mínimo, máximo, media, mediana, primer y tercer cuartil, y el número de valores
 > faltantes.
 
-### Manejo de Valores Faltantes y Duplicados
+### Limpieza de datos
 
 
 ### Visualización de Datos Básica
