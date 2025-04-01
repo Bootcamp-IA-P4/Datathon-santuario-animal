@@ -1,5 +1,6 @@
  # Datathon
-Aquí pon una descripcion atractiva de tu resultado
+Este proyecto es la introducción perfecta al análisis de datos, gráficos y el arte del data storytelling.
+
 -indice-
 ## Recursos:
 * Guía práctica de introducción al análisis exploratorio de datos en Python: [guia_eda_python](https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf)
@@ -45,7 +46,7 @@ Después vamos a cargar los datos de un dataframe yo usare este [animal-conditio
 > Como herramienta para este caso práctico, se ha utilizado el lenguaje de programación Python y el entorno
 de desarrollo Jupyter Notebook en Google Colab
 
-### Exploración Inicial de los Datos
+## Exploración Inicial de los Datos
 Esto nos dará pistas para ver la estructura, el resumen estadístico y las primeras filas del dataframe. ¿Por qué es importante?, es nuestra primera toma con el dataset con el que vamos a trabajar, nos permite ver los datos al completo ya que el siguiente paso será realizar las preguntas disparadoras.
 
 ```python
@@ -78,23 +79,25 @@ Después de analizar nuestro dataset, debemos definir que finalidad tienen nuest
 
 Para esto primero cree un storytelling que me ayudará a darle contexto a estos datos:
 
-> El santuario nueva amazonas ha tenido un gran repunte de una enfermedad virica mortal en distintas especies. Con el fin de controlar el virus se nos ha pedido que analicemos > sus datos clínicos para poder identificar un patrón en los síntomas y que el equipo médico pueda erradicarlo, así seguir preservando a las distintas especies que allí habitan.
+> El Santuario Nueva Amazonas ha registrado un alarmante incremento de una enfermedad viral letal que afecta a diversas especies. Ante la urgencia de contener su propagación, se nos ha encomendado la tarea de analizar minuciosamente los datos clínicos para identificar patrones en los síntomas. Con esta información, el equipo médico podrá diseñar estrategias precisas para erradicar el virus y, así, preservar la rica diversidad biológica que habita.
 
 Con este contexto y gracias a la visualización previa podemos reflexionar que datos nos parecen relevantes analizar para poder obtener un mejor resultado. Como experta en salud animal mis preguntas disparadoras son:
 
+> **¿Qué proporción de casos son considerados peligrosos vs no peligrosos?**
+> 
 > **Cuáles son los síntomas más frecuentes?**
 > 
 > **¿Cuáles son las especies que más sufren estos sintomas?**
 > 
 > **¿Cuáles son las especies que mas sufren el sintoma principal?**
 > 
-> **¿Qué proporción de casos son considerados peligrosos vs no peligrosos?**
+> **¿Cúales son las especies que más han fallecido?**
 > 
-> **¿Qué combinaciones de síntomas se presentan con mayor frecuencia, especialmente en los casos peligrosos?**
+> **¿Cúales son el conjunto de síntomas presentados por animales fallecidos?**
 
 Con esto claro vamos con el siguiente paso:
 
-### Limpieza de datos
+## Limpieza de datos
 
 Es fundamental antes de ponernos a graficar, no tiene sentido trabajar en un entorno sucio, pasa lo mismo con los datos, de que nos sirve gráficar los síntomas mas frecuentes si en varias lineas ese dato esta en blanco o hay alguna incongruencia.
 
@@ -130,18 +133,64 @@ Cómo mi dataset solo tenia este pequeño fallo, de momento mi parte de limpieza
 | Revisión final del DataFrame | Se revisa la forma, los valores nulos y los tipos de datos del DataFrame final. | `df2.shape`<br>`df2.isna().sum()`<br>`df2.dtypes` |
 
 
-### Visualización de Datos
+## Visualización de Datos
 La visualización de datos es esencial en el análisis exploratorio, ya que no solo complementa los análisis numéricos, sino que también permite identificar patrones, tendencias, relaciones entre variables y anomalías que podrían pasar desapercibidas. Para ello, utilizaremos diversas herramientas gráficas como histogramas, gráficos de líneas, diagramas de barras y gráficos de sectores—adaptadas a distintos tipos de análisis. En particular, el histograma es muy útil para representar la distribución de variables numéricas al agrupar los datos en intervalos, lo que facilita detectar características estadísticas fundamentales como la tendencia central, la variabilidad, la presencia de valores extremos, discontinuidades y posibles valores atípicos.
 
 He de confesar que esta ha sido mi parte favorita para desarrollar el EDA, soy una persona muy visual y me encanto ver las gráficas, a pesar de que tuve algunos problemas ya que mis datos se veian tal que asi:
-![]()
+![datos mal gestionados](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/Captura%20de%20pantalla%202025-03-31%20232408.png)
 
 Quede bastante horrorizada con esto sin embargo era por que no me percate que habia demasiados síntomas distintos (muchas categorías únicas), de modo que cada categoría se convertia en una barra individual y el gráfico se vuelve ilegible. ¿Cómo lo solucione? Pues reduciendo las categorías a las que más se repiten, creando un top 20 síntomas más frecuentes. Así evite que el gráfico se sature con datos poco relevantes.
 
-![]()
+![analisis de sintomas](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/An%C3%A1lisis%20de%20los%20s%C3%ADntomas.png)
 
 Esto esta mucho mejor, ¿Qué cuenta este dato?
 Me muestra los 20 sintomas que mas se repinten, con este dato ayudamos a los médicos veterinarios a estar alerta de esos animales que empiecen a presentarlos ya que es bastante probable que esten incubando el virus, la actuación temprana ante esta situación es fundamental para garantizar el bienenstar de estos animales.
 
-También use unn diágrama de pastel para poder representar 
+----
+
+También use un diágrama de pastel ya que son datos que contrastan. Esta gráfica informa el rango de casos clínicos registrados como peligrosos ya que el riesgo tasa de mortalidad es elevada.
+
+![peligroso](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/Proporci%C3%B3n%20de%20casos%20peligrosos%20vs%20no%20peligrosos.png)
+
+----
+
+Esta gráfica les ayuda a los veterinarios a conocer que animales deben tenerlos bajo vigilancia, eso hace que su trabajo sea menos fragmentado en esta crisis virica.
+![animales con afecciones](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/Cu%C3%A1l%20es%20la%20especie%20que%20m%C3%A1s%20sufre%20esos%20s%C3%ADntomas.png)
+
+---
+En este caso tener fiebre, parece ser un indicativo clave y que se repite con frecuencia en los casos sobretodo peligrosos, conocer este dato no solo refuerza la rapida ejecución, si no también conocer un top de especies puede permitir realizar mejores pruebas de diagnostico para así conseguir erradicar este virus.
+
+![animales con fiebre](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/Cu%C3%A1les%20son%20las%20especies%20que%20mas%20sufren%20el%20sintoma%20principal.png)
+
+----
+
+¿Cuáles son las especies que han falllecido debido a este virus? 
+Para ello vamos a filtrar los datos que tengan la etiqueta death, y mostrarlo en en un gráfico sencillo de lineas horizontales, esto ayudará a los médicos veterinarios a conocer que especie tiene una baja resistencia y reforzar sus defenzas en un futuro brote.
+
+![animales fallecidos](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/Cu%C3%A1les%20son%20las%20especies%20que%20han%20falllecido%20debido%20a%20este%20virus.png)
+
+----
+
+Esta gráfica es clave ya que nos da un patrón de cuales han sido los síntomas que han acompañado a esos animales que tenian la etiqueta "death", esto ayuda a determinar el protocolo de actuación ya que con esto se confirman cuales son la mayoria de los sintomas letales que ocaciona el virus, si se actua de una forma rápida la tasa de mortalidad se reducirá.
+
+![sintomas cons etiqueta death](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/C%C3%BAales%20son%20el%20conjunto%20de%20s%C3%ADntomas%20presentados%20por%20animales%20fallecidos.png)
+
+----
+
+##  Recomendaciones y Próximos Pasos
+Focalizar Análisis en las Especies más Afectadas
+ * Investigar a fondo las 4 especies con mayores índices de mortalidad, generando perfiles sintomáticos específicos.
+
+Evaluar la Influencia de “Uteria Inertia”
+ * Profundizar en casos de hembras afectadas y analizar si esta afección incrementa la letalidad cuando se combina con el virus.
+
+Extender el Análisis de Síntomas
+ * Revisar los síntomas de menor frecuencia pero presentes en el top 20, para detectar posibles asociaciones aún no evidentes.
+
+Mejorar Protocolos de Detección Temprana
+ * Proponer herramientas de cribado enfocado en síntomas críticos (p.ej., combinaciones fiebre + diarrea + tos), evaluando su eficacia para acciones preventivas.
+
+Validar Estrategias de Intervención
+ * Colaborar con el equipo clínico para monitorizar el impacto de cualquier medida implementada y ajustar la estrategia en función de resultados reales.
+
 
