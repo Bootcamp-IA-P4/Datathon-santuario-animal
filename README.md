@@ -130,9 +130,20 @@ Cómo mi dataset solo tenia este pequeño fallo, de momento mi parte de limpieza
 | Revisión final del DataFrame | Se revisa la forma, los valores nulos y los tipos de datos del DataFrame final. | `df2.shape`<br>`df2.isna().sum()`<br>`df2.dtypes` |
 
 
+### Visualización de Datos
+La visualización de datos es esencial en el análisis exploratorio, ya que no solo complementa los análisis numéricos, sino que también permite identificar patrones, tendencias, relaciones entre variables y anomalías que podrían pasar desapercibidas. Para ello, utilizaremos diversas herramientas gráficas como histogramas, gráficos de líneas, diagramas de barras y gráficos de sectores—adaptadas a distintos tipos de análisis. En particular, el histograma es muy útil para representar la distribución de variables numéricas al agrupar los datos en intervalos, lo que facilita detectar características estadísticas fundamentales como la tendencia central, la variabilidad, la presencia de valores extremos, discontinuidades y posibles valores atípicos.
 
-### Visualización de Datos Básica
-La visualización de datos es esencial en el análisis exploratorio, ya que no solo complementa los análisis numéricos, sino que también permite identificar patrones, tendencias, relaciones entre variables y anomalías que podrían pasar desapercibidas. Para ello, se utilizan diversas herramientas gráficas—como histogramas, gráficos de líneas, diagramas de barras y gráficos de sectores—adaptadas a distintos tipos de análisis. En particular, el histograma es muy útil para representar la distribución de variables numéricas al agrupar los datos en intervalos, lo que facilita detectar características estadísticas fundamentales como la tendencia central, la variabilidad, la presencia de valores extremos, discontinuidades y posibles valores atípicos.
+He de confesar que esta ha sido mi parte favorita para desarrollar el EDA, soy una persona muy visual y me encanto ver las gráficas, a pesar de que tuve algunos problemas ya que mis datos se veian tal que asi:
+![]()
 
-En este caso vamos a usar:
+Quede bastante horrorizada con esto sin embargo era por que no me percate que habia demasiados síntomas distintos (muchas categorías únicas), de modo que cada categoría se convertia en una barra individual y el gráfico se vuelve ilegible. ¿Cómo lo solucione? Pues reduciendo las categorías a las que más se repiten, creando un top 20 síntomas más frecuentes. Así evite que el gráfico se sature con datos poco relevantes.
+
+![]()
+
+Esto esta mucho mejor, ¿Qué cuenta este dato?
+Me muestra los 20 sintomas que mas se repinten, con este dato ayudamos a los médicos veterinarios a estar alerta de esos animales que empiecen a presentarlos ya que es bastante probable que esten incubando el virus, la actuación temprana ante esta situación es fundamental para garantizar el bienenstar de estos animales.
+
+¿Cómo lo conseguí?
+
+
 
