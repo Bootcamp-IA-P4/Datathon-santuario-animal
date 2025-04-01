@@ -6,6 +6,7 @@ Aquí pon una descripcion atractiva de tu resultado
 * (EDA) en Python para Principiantes: Paso a Paso. [Guía de Análisis Exploratorio de Datos](https://dataxpertos.com/guia-analisis-exploratorio-python-eda/)
 * GUÍA DE ANALISIS EXPLORATORIO: [TUTORIAL CIENCIA DE DATOS](https://www.youtube.com/watch?v=-nCIBbdDQOg)
 *  Cómo elegir el gráfico correcto: [visualizar datos abiertos](https://datos.gob.es/es/blog/como-elegir-el-grafico-correcto-para-visualizar-datos-abiertos)
+*  Guía práctica de limpieza de datos: [guía data clean](https://www.datasource.ai/es/data-science-articles/una-guia-practica-para-la-limpieza-de-datos)
 
 ## Primeros pasos para realizar un EDA
 ![EDA](https://i0.wp.com/gravitar.biz/wp-content/uploads/2024/02/8-1.png?resize=752%2C387&ssl=1)
@@ -97,8 +98,36 @@ Con esto claro vamos con el siguiente paso:
 
 Es fundamental antes de ponernos a graficar, no tiene sentido trabajar en un entorno sucio, pasa lo mismo con los datos, de que nos sirve gráficar los síntomas mas frecuentes si en varias lineas ese dato esta en blanco o hay alguna incongruencia.
 
-En este caso el dataset venia bastante limpio (algo que como novata agradezco) solo tenia 
+En este caso el dataset venia bastante limpio (algo que como novata agradezco) solo tenia que limpiar dos valores nulos en la columna "Dangerous".
+
 Para esta limpieza usaremos los siguientes métodos:
+```python
+# Revisamos la cantidad de valores nulos en cada columna
+print(df.isnull().sum())
+```
+Una vez revisadon donde esta el error procedemos a arreglarlo
+```python
+# Rellenamos los valores nulos en la columna 'Dangerous' con 'No'
+df['Dangerous'] = df['Dangerous'].fillna('No')
+
+# Creamos una columna numérica para Dangerous: Yes -> 1, No -> 0
+df['Dangerous_numeric'] = df['Dangerous'].map({'Yes': 1, 'No': 0})
+
+# Revisamos nuevamente los valores únicos
+print("\nValores únicos en Dangerous:", df['Dangerous'].unique())
+```
+Cómo mi dataset solo tenia este pequeño fallo, de momento mi parte de limpieza esta lista pero te dejo otros métodos por si hay que realizar una limpieza más exhaustiva:
+
+| Paso | Descripción | Código |
+| ------------- | ------------- | ------------- |
+| Eliminación de filas y columnas redundantes | Se eliminan las tres primeras filas que contienen información repetida y las columnas de promedios innecesarios. | `df.drop([0, 1, 2], axis=0, inplace=True)`<br>`df.reset_index(drop=True, inplace=True)`<br>`df.drop(df.columns[1::3], axis=1, inplace=True)` |
+| Extracción del valor numérico | Se extrae el valor numérico (primer elemento) de cada celda que incluye un valor y un rango. | `for i in range(1, 85):`<br>`&nbsp;&nbsp;df.iloc[:, i] = df.iloc[:, i].str.split(expand=True)[0]` |
+| Transformación a formato largo | Se convierte el DataFrame de formato ancho a uno largo usando `melt`. | `df2 = df.melt(id_vars=['Unnamed: 0'], value_name='obesity_rate')` |
+| Separación de columnas (año y género) | Se separa la columna que codifica año y género en dos columnas: `year` y `gender`, y se elimina la columna original. | `df2[['year', 'gender']] = df2.iloc[:,1].str.split('.', expand=True)`<br>`df2.drop('variable', axis=1, inplace=True)` |
+| Renombrado y mapeo de género | Se renombra la columna de país y se reemplazan los códigos de género numéricos por etiquetas (`male`/`female`). | `df2.rename(columns={'Unnamed: 0': 'country'}, inplace=True)`<br>`gender = {'1': 'male', '2': 'female'}`<br>`df2.gender.replace(gender, inplace=True)` |
+| Eliminación de filas con valores "No" | Se eliminan las filas correspondientes a países que tienen el valor `"No"` en `obesity_rate`. | `omit = df2[df2.obesity_rate == 'No']['country'].unique()`<br>`df2 = df2[~df2.country.isin(omit)]` |
+| Conversión de tipo numérico | Se convierte la columna `obesity_rate` a tipo `float32` para facilitar el análisis. | `df2 = df2.astype({'obesity_rate': 'float32'})` |
+| Revisión final del DataFrame | Se revisa la forma, los valores nulos y los tipos de datos del DataFrame final. | `df2.shape`<br>`df2.isna().sum()`<br>`df2.dtypes` |
 
 
 
