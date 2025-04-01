@@ -1,4 +1,4 @@
-# Datathon
+ # Datathon
 Aquí pon una descripcion atractiva de tu resultado
 -indice-
 ## Recursos:
@@ -14,7 +14,7 @@ Como puedes observar este proyecto trata sobre el análisis exploratorio de los 
 * Numpy: se usa para la realización de operaciones númericas debido a su gran eficiencia.
 * Pandas: analiza y manipula datos. Comúnmente usada para trabajar con conjunto de datos (dataset) estructurado en filas y columnas (llamado el excel de python).
 * Matplotlib: visualizar datos, crea gráficos de forma que los datos quedan mucho más visuales y así podemos comprenderlos mejor. 
-## Analizemos un dataset
+## Analizemos nuestro dataset
 Cosas a tener en cuenta:
 1. Realizar un análisis descriptivo de las variables para obtener una idea representativa del conjunto de
 datos.
@@ -45,6 +45,7 @@ Después vamos a cargar los datos de un dataframe yo usare este [animal-conditio
 de desarrollo Jupyter Notebook en Google Colab
 
 ### Exploración Inicial de los Datos
+Esto nos dará pistas para ver la estructura, el resumen estadístico y las primeras filas del dataframe. ¿Por qué es importante?, es nuestra primera toma con el dataset con el que vamos a trabajar, nos permite ver los datos al completo ya que el siguiente paso será realizar las preguntas disparadoras.
 
 ```python
 # Cargar los datos en un DataFrame
@@ -71,6 +72,8 @@ print("="*100)
 > incluyendo mínimo, máximo, media, mediana, primer y tercer cuartil, y el número de valores
 > faltantes.
 
+### Preguntas disparadoras
+Después de analizar nuestro dataset, debemos definir que finalidad tienen nuestros datos,de todo ello que queremos análizar. Aquí entra en juego las preguntas disipadoras, en mi caso reflexione lo que queria análizar
 ### Limpieza de datos
 
 
