@@ -103,9 +103,9 @@ Con este contexto y gracias a la visualización previa podemos reflexionar que d
 > 
 > **¿Cuáles son las especies que mas sufren el sintoma principal?**
 > 
-> **¿Cúales son las especies que más han fallecido?**
+> **¿Cuáles son las especies que más han fallecido?**
 > 
-> **¿Cúales son el conjunto de síntomas presentados por animales fallecidos?**
+> **¿Cuáles son el conjunto de síntomas presentados por animales fallecidos?**
 
 Con esto claro vamos con el siguiente paso:
 
@@ -177,7 +177,7 @@ En este caso tener fiebre, parece ser un indicativo clave y que se repite con fr
 ----
 
 ¿Cuáles son las especies que han falllecido debido a este virus? 
-Para ello vamos a filtrar los datos que tengan la etiqueta death, y mostrarlo en en un gráfico sencillo de lineas horizontales, esto ayudará a los médicos veterinarios a conocer que especie tiene una baja resistencia y reforzar sus defenzas en un futuro brote.
+Para ello vamos a filtrar los datos que tengan la etiqueta death, y mostrarlo en en un gráfico sencillo de lineas horizontales, esto ayudará a los médicos veterinarios a conocer que especie tiene una baja resistencia y reforzar sus defensas en un futuro brote.
 
 ![animales fallecidos](https://github.com/abbyenredes/Datathon/blob/docs/readme/img/Cu%C3%A1les%20son%20las%20especies%20que%20han%20falllecido%20debido%20a%20este%20virus.png)
 
