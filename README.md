@@ -143,7 +143,5 @@ Quede bastante horrorizada con esto sin embargo era por que no me percate que ha
 Esto esta mucho mejor, ¿Qué cuenta este dato?
 Me muestra los 20 sintomas que mas se repinten, con este dato ayudamos a los médicos veterinarios a estar alerta de esos animales que empiecen a presentarlos ya que es bastante probable que esten incubando el virus, la actuación temprana ante esta situación es fundamental para garantizar el bienenstar de estos animales.
 
-¿Cómo lo conseguí?
-
-
+También use unn diágrama de pastel para poder representar 
 
