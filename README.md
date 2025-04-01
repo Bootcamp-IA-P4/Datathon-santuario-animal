@@ -1,7 +1,18 @@
  # Datathon
 Este proyecto es la introducción perfecta al análisis de datos, gráficos y el arte del data storytelling.
 
--indice-
+Índice:
+
+- [Recursos](#Recursos)
+- [Primeros pasos para realizar un EDA](#Primeros-pasos-para-realizar-un-EDA)
+- [Análizemos nuestro dataset](#Análizemos-nuestro-dataset)
+- [Exploración Inicial de los Datos](#Exploración-Inicial-de-los-Datos)
+  - [Preguntas disparadoras](#Preguntas-disparadoras)
+- [Limpieza de datos](#Limpieza-de-datos)
+- [Visualización de Datos](#Visualización-de-Datos)
+- [Recomendaciones y Próximos Pasos](#Recomendaciones-y-Próximos-Pasos)
+
+  
 ## Recursos:
 * Guía práctica de introducción al análisis exploratorio de datos en Python: [guia_eda_python](https://datos.gob.es/sites/default/files/doc/file/guia_eda_python.pdf)
 * (EDA) en Python para Principiantes: Paso a Paso. [Guía de Análisis Exploratorio de Datos](https://dataxpertos.com/guia-analisis-exploratorio-python-eda/)
@@ -15,8 +26,9 @@ Este proyecto es la introducción perfecta al análisis de datos, gráficos y el
 Como puedes observar este proyecto trata sobre el análisis exploratorio de los datos, es el corazón de la ciencia de datos y machine learnig, todo esto lo realizaremos gracias a tres bibliotecas de python que son un éstandar para este análisis y visualización de datos.
 * Numpy: se usa para la realización de operaciones númericas debido a su gran eficiencia.
 * Pandas: analiza y manipula datos. Comúnmente usada para trabajar con conjunto de datos (dataset) estructurado en filas y columnas (llamado el excel de python).
-* Matplotlib: visualizar datos, crea gráficos de forma que los datos quedan mucho más visuales y así podemos comprenderlos mejor. 
-## Analizemos nuestro dataset
+* Matplotlib: visualizar datos, crea gráficos de forma que los datos quedan mucho más visuales y así podemos comprenderlos mejor.
+  
+## Análizemos nuestro dataset
 Cosas a tener en cuenta:
 1. Realizar un análisis descriptivo de las variables para obtener una idea representativa del conjunto de
 datos.
@@ -177,7 +189,7 @@ Esta gráfica es clave ya que nos da un patrón de cuales han sido los síntomas
 
 ----
 
-##  Recomendaciones y Próximos Pasos
+## Recomendaciones y Próximos Pasos
 Focalizar Análisis en las Especies más Afectadas
  * Investigar a fondo las 4 especies con mayores índices de mortalidad, generando perfiles sintomáticos específicos.
 
