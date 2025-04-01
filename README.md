@@ -73,8 +73,33 @@ print("="*100)
 > faltantes.
 
 ### Preguntas disparadoras
-Después de analizar nuestro dataset, debemos definir que finalidad tienen nuestros datos,de todo ello que queremos análizar. Aquí entra en juego las preguntas disipadoras, en mi caso reflexione lo que queria análizar
+Después de analizar nuestro dataset, debemos definir que finalidad tienen nuestros datos,de todo ello que queremos análizar. Aquí entra en juego las preguntas disipadoras, en mi caso reflexione lo que queria análizar. 
+
+Para esto primero cree un storytelling que me ayudará a darle contexto a estos datos:
+
+> El santuario nueva amazonas ha tenido un gran repunte de una enfermedad virica mortal en distintas especies. Con el fin de controlar el virus se nos ha pedido que analicemos > sus datos clínicos para poder identificar un patrón en los síntomas y que el equipo médico pueda erradicarlo, así seguir preservando a las distintas especies que allí habitan.
+
+Con este contexto y gracias a la visualización previa podemos reflexionar que datos nos parecen relevantes analizar para poder obtener un mejor resultado. Como experta en salud animal mis preguntas disparadoras son:
+
+> **Cuáles son los síntomas más frecuentes?**
+> 
+> **¿Cuáles son las especies que más sufren estos sintomas?**
+> 
+> **¿Cuáles son las especies que mas sufren el sintoma principal?**
+> 
+> **¿Qué proporción de casos son considerados peligrosos vs no peligrosos?**
+> 
+> **¿Qué combinaciones de síntomas se presentan con mayor frecuencia, especialmente en los casos peligrosos?**
+
+Con esto claro vamos con el siguiente paso:
+
 ### Limpieza de datos
+
+Es fundamental antes de ponernos a graficar, no tiene sentido trabajar en un entorno sucio, pasa lo mismo con los datos, de que nos sirve gráficar los síntomas mas frecuentes si en varias lineas ese dato esta en blanco o hay alguna incongruencia.
+
+En este caso el dataset venia bastante limpio (algo que como novata agradezco) solo tenia 
+Para esta limpieza usaremos los siguientes métodos:
+
 
 
 ### Visualización de Datos Básica
